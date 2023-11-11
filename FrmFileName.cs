@@ -22,7 +22,9 @@ namespace CreatingTextFile
         private void btnOkay_Click(object sender, EventArgs e)
         {
             SetFileName = txtFileName.Text + ".txt";
-            this.Close();
+            Close();
+            FrmRegistration form = new FrmRegistration();
+            form.ShowDialog();
 
         }
     }

@@ -18,6 +18,7 @@ namespace CreatingTextFile
         {
             InitializeComponent();
             listOfProgram();
+            listOfGender();
         }
 
         public void listOfProgram()
@@ -35,7 +36,10 @@ namespace CreatingTextFile
             {
                 cmbProgram.Items.Add(ListOfPrograms[i].ToString());
             }
+        }
 
+        public void listOfGender()
+        {
             string[] listOfGender = new string[] {
                 "Male",
                 "Female"
@@ -45,6 +49,35 @@ namespace CreatingTextFile
             {
                 cmbGender.Items.Add(listOfGender[i].ToString());
             }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            string FileName = txtStudentNo.Text;
+            string getStudentNo = "Student No: " + txtStudentNo.Text;
+            string getFulltName = "FullName: " + txtLastName.Text + ", " + txtFirstName.Text + ", " + txtMiddleInitial.Text;
+            string getProgram = "Program: " + cmbProgram.Text;
+            string getGender = "Gender: " + cmbGender.Text;
+            string getAge = "Age: " + txtAge.Text;
+            string getBirthday = "Birthday: " + datePickerBirthday.Value.ToString("yyyy-MM-dd");
+            string getContact = "Contact No: " + txtContactNo.Text;
+
+
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            using (StreamWriter stream = new StreamWriter(Path.Combine(docPath, FileName + ".txt")))
+            {
+                stream.WriteLine(getStudentNo);
+                stream.WriteLine(getFulltName);
+                stream.WriteLine(getProgram);
+                stream.WriteLine(getGender);
+                stream.WriteLine(getAge);
+                stream.WriteLine(getBirthday);
+                stream.WriteLine(getContact);
+
+            }
+
+            MessageBox.Show("Registered Successfully.");
+            Close();
         }
     }
 }

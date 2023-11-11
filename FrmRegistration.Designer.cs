@@ -204,7 +204,7 @@
             this.cmbProgram.FormattingEnabled = true;
             this.cmbProgram.Location = new System.Drawing.Point(686, 104);
             this.cmbProgram.Name = "cmbProgram";
-            this.cmbProgram.Size = new System.Drawing.Size(212, 34);
+            this.cmbProgram.Size = new System.Drawing.Size(365, 34);
             this.cmbProgram.TabIndex = 16;
             // 
             // cmbGender
@@ -263,7 +263,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmRegistration";
             this.Text = "FrmRegistration";
-            this.Load += new System.EventHandler(this.FrmRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
